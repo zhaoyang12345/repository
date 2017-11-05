@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>cn.itcast</groupId>
+    <artifactId>elf-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>cn.itcast</groupId>
+  <artifactId>elf__manager</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<!-- 把项目发布到tomcat服务器根目录: webapps/ROOT/  -->
+					<path>/</path>
+					<!-- 项目启动端口 -->
+					<port>8080</port>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<modules>
+	
+		<module>elf-manager-pojo</module>
+		<module>elf-manager-dao</module>
+		<module>elf-manager-service</module>
+		<module>elf-manager-web</module>
+	</modules>
+	<dependencies>
+		<dependency>
+			<groupId>cn.itcast</groupId>
+			<artifactId>elf__common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>
